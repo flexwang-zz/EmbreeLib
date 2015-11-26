@@ -20,7 +20,7 @@ inline rt_result intersect(RTCScene& scene, RTCRay& ray)
         float w = 1.f - u - v;
 
         result.tri_idx = ray.primID;
-        result.bary = vector2f(w, u);
+        result.bary = vector2f(u, v);
     }
     return result;
 }

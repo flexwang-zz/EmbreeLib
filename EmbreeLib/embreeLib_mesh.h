@@ -15,8 +15,10 @@ inline void InitMesh(
     int triNum = tri_index.size()/3;
     int vertNum = tri_points.size();
     printf_s("%d tri %d vertex\n", triNum, vertNum);
+
     unsigned geomID = rtcNewTriangleMesh(scene, RTC_GEOMETRY_STATIC, triNum, vertNum, 1);
 
+    if (!triNum || !vertNum) return;
     // Set vertices
     float *vertex = (float *)rtcMapBuffer(scene, geomID, RTC_VERTEX_BUFFER);
 
