@@ -18,7 +18,6 @@ inline void InitMesh(
 
     unsigned geomID = rtcNewTriangleMesh(scene, RTC_GEOMETRY_STATIC, triNum, vertNum, 1);
 
-    if (!triNum || !vertNum) return;
     // Set vertices
     float *vertex = (float *)rtcMapBuffer(scene, geomID, RTC_VERTEX_BUFFER);
 
@@ -33,7 +32,7 @@ inline void InitMesh(
 
     // Set triangles
     int* index = (int *)rtcMapBuffer(scene, geomID, RTC_INDEX_BUFFER);
-    memcpy_s(index, sizeof(int)*3*triNum, &tri_index[0], sizeof(int)*3*triNum);
+    memcpy_s(index, sizeof(int)*3*triNum, tri_index.size()?&tri_index[0]:nullptr, sizeof(int)*3*triNum);
     rtcUnmapBuffer(scene, geomID, RTC_INDEX_BUFFER);
 
     // Commit the scene

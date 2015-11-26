@@ -139,6 +139,7 @@ copy $(Solutiondir)x64\Release\$(ProjectName).lib $(Solutiondir)build\lib</Comma
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="embreeLib.cpp" />
+    <ClCompile Include="embree_camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="embreeLib_camera.h" />

@@ -18,6 +18,9 @@
     <ClCompile Include="embreeLib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="embree_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="embreeLib.h">
